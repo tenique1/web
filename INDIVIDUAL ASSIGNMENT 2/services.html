@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products and Services Catalog</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #5c0334;
+        margin: 0;
+        padding: 20px;
+      }
+      nav {
+        background-color: #f8f8f8;
+        padding: 10px;
+        text-align: center;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+      h1 {
+        text-align: center;
+        color: #faf8f8;
+      }
+      h3 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      .tab button.active {
+        background-color: #ccc; /* Active tab color */
+      }
+      .tabcontent {
+        display: none; /* Hidden by default */
+        padding: 20px;
+        border-top: none;
+        background-color: white; /* Tab content background */
+      }
+      .item {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      .item img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+      .price {
+        font-weight: bold;
+        color: #fcb8da; /* Green color for pricing */
+      }
+      .active {
+        font-weight: bold;
+        color: #5c0334; /* Change color to indicate active page */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li>
+          <a href="services.html" class="nav-link active"
+            >PRODUCTS & SERVICES</a
+          >
+        </li>
+        <li><a href="invoice.html">INVOICES</a></li>
+        <li><a href="checkout.html">CHECKOUT</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <h1>Products and Services</h1>
+
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'Products')"
+          id="defaultOpen"
+        >
+          Products
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Services')">
+          Services
+        </button>
+      </div>
+
+      <div id="Products" class="tabcontent">
+        <div class="item">
+          <img src="images/conditioner.jpg" alt="Hair Conditioner" />
+          <h3>Hair Conditioner</h3>
+          <p>
+            Hydrates, detangles, repairs, adds shine, controls frizz, protects,
+            balances pH, and suits all hair types.
+          </p>
+          <p class="price">Cost: JMD $2551.23</p>
+          <button onclick="addToInvoice('Hair Conditioner', 2551.23)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/shampoo.jpg" alt="Product 2" />
+          <h3>Shampoo</h3>
+          <p>Hydrating and Cleansing.For all hairtypes.</p>
+          <p class="price">Cost: JMD $2653.01</p>
+          <button onclick="addToInvoice('Shampoo', 2653.01)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/detanglingbrush.jpg" alt="Product 1" />
+          <h3>Detangling Brush</h3>
+          <p>Detangles knotted, thick hair easily. For all hairtypes.</p>
+          <p class="price">Cost: JMD $1250.00</p>
+          <button onclick="addToInvoice('Detangling Brush', 1250.00,this)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/hairbonnet.jpg" alt="Product " />
+          <h3>Hair Bonnet</h3>
+          <p>Protects hair from breakage.For all hairtypes</p>
+          <p class="price">Cost: JMD $1500.00</p>
+          <button onclick="addToInvoice('Hair Bonnet', 1500.00, this)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/hairgrowthoil.jpg" alt="Product 1" />
+          <h3>Hair Growth Oil</h3>
+          <p>Grows, thicken and strengthen all hair types.</p>
+          <p class="price">Cost: JMD $1800.00</p>
+          <button onclick="addToInvoice('Hair Growth Oil', 1800.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/dovebodyscrub.jpg" alt="Product 2" />
+          <h3>Dove Body Scrub</h3>
+          <p>Exfoliate and moisturize all skin types.</p>
+          <p class="price">Cost: JMD $3456.88</p>
+          <button onclick="addToInvoice('Dove Body Scrub', 3456.88)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+      </div>
+
+      <div id="Services" class="tabcontent">
+        <div class="item">
+          <img src="images/washandgo.jpg" alt="Service 1" />
+          <h3>Wash & Go</h3>
+          <p>
+            A full wash with Shampoo, Conditioner, Steam and a curly hair leave
+            out.
+          </p>
+          <p class="price">Cost: JMD $9550.00</p>
+          <button onclick="addToInvoice('Wash & Go', 9550.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/washandblowdry.jpg" alt="Service 2" />
+          <h3>Wash and Blowdry</h3>
+          <p>A full wash session and then blowdry afterwards.</p>
+          <p class="price">Cost: JMD $8850.00</p>
+          <button onclick="addToInvoice('Wash and Blowdry', 8850.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/silkpress.jpg" alt="Service 1" />
+          <h3>Silkpress</h3>
+          <p>Wash, steam and straigthen hair.</p>
+          <p class="price">Cost: JMD $12500.OO</p>
+          <button onclick="addToInvoice('Silkpress', 12500.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/colorandsilkpress.jpg" alt="Service 2" />
+          <h3>Silkpress and Colour</h3>
+          <p>Wash, colour and silkpress hair</p>
+          <p class="price">Cost: JMD $15500.00</p>
+          <button onclick="addToInvoice('Silkpress and Colour', 15500.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/hairhighlights.jpg" alt="Service 1" />
+          <h3>Hair Highlights</h3>
+          <p>Add highlights to hair with colour of your choice</p>
+          <p class="price">Cost: JMD $7500</p>
+          <button onclick="addToInvoice('Hair Highlights', 7500.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/regularknotless.jpg" alt="Service 2" />
+          <h3>Regular Knotless</h3>
+          <p>
+            Medium size, back length knotless braids. Colour braid of your
+            choice
+          </p>
+          <p class="price">Cost: JMD $6500</p>
+          <button onclick="addToInvoice('Regular Knotless', 6500.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/bohoknotless.jpg" alt="Service 1" />
+          <h3>Boho Knotless</h3>
+          <p>
+            Knotless braids with curly leave-out. Colour braid of your choice
+          </p>
+          <p class="price">Cost: JMD $10500</p>
+          <button onclick="addToInvoice('Boho Knotless', 10500.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+
+        <div class="item">
+          <img src="images/aliciakeysbraids.jpg" alt="Service 2" />
+          <h3>Alicia Keys Braids</h3>
+          <p>Decorative, freestyle cornrow.</p>
+          <p class="price">Cost: JMD $8500.00</p>
+          <button onclick="addToInvoice('Alicia Keys Braids', 8500.00)">
+            Add to INVOICE
+          </button>
+          <span
+            class="confirmation-message"
+            style="color: green; margin-left: 10px"
+          ></span>
+        </div>
+        <div style="margin-top: 20px">
+          <button onclick="window.location.href='checkout.html'">
+            Checkout
+          </button>
+        </div>
+      </div>
+      /*
+      <h2>Invoice</h2>
+      <div id="invoiceList"></div>
+    </div>
+
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      document.getElementById("defaultOpen").click();
+
+      function addToInvoice(itemName, price) {
+        const invoiceItems =
+          JSON.parse(localStorage.getItem("invoiceItems")) || [];
+
+        invoiceItems.push({ name: itemName, price: price });
+
+        localStorage.setItem("invoiceItems", JSON.stringify(invoiceItems));
+
+        const totalCost = invoiceItems.reduce(
+          (total, item) => total + item.price,
+          0
+        );
+
+        localStorage.setItem("invoiceTotal", totalCost);
+
+        window.location.href = "invoice.html";
+      }
+    </script>
+  </body>
+</html>
